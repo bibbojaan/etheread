@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <style>
+      body {
+        position: relative;
+        background-image: url("https://i.imgur.com/GBknTMM.png");
+        background-size: cover;
+        z-index: -1;
+      }
+      form {
+        position: relative;
+        background-color: rgba(255, 249, 250, 0.9); /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        border-color: #FFD4D4;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+        text-align: center; /* Center align form elements */
+        margin: 20px auto; /* Center the form on the page */
+        max-width: 500px; /* Set a maximum width for the form */
+        z-index: 1;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="submit"] {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        background-color: #FF8BA7; /* Green background for the submit button */
+        color: #6B425E;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align=center style="font-family:Helvetica; color:#FFB7C5; font-size:50px; -webkit-text-stroke: 2px #6B425E"; z-index:1; >ETHEREAD</h1>
+    <form method="POST">
+      <label style="font-family:Helvetica" for="genre">Genre:</label>
+      <input type="text" id="genre" name="genre" required><br><br>
+
+      <label style="font-family:Helvetica" for="character_name">Character Name:</label>
+      <input type="text" id="character_name" name="character_name" required><br><br>
+
+      <label style="font-family:Helvetica" for="setting">Setting:</label>
+      <input type="text" id="setting" name="setting" required><br><br>
+
+      <label style="font-family:Helvetica" for="starting_point">Starting Point:</label>
+      <input type="text" id="starting_point" name="starting_point" required><br><br>
+
+      <label style="font-family:Helvetica" for="ending_point">Ending Point:</label>
+      <input type="text" id="ending_point" name="ending_point" required><br><br>
+
+      <input style="font-family:Helvetica" type="submit" value="Generate Plot">
+    </form>
+
+    {% if text %}
+      <div style="background-color: white; padding: 20px; border-radius: 10px; font-family: Helvetica;">
+        <h2>Generated Plot:</h2>
+        <p>{{ text }}</p>
+      </div>
+    {% endif %}
+  </body>
+</html>
